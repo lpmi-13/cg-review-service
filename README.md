@@ -48,6 +48,8 @@ This will be written in NodeJS and run in fargate. It will have an ALB in front 
 
 It's going to use express, since that's quick and easy to set up, and we don't need anything fancy here.
 
+We'll also be using security groups to restrict the origin to anything inside the VPC or the specific cloudfront distribution.
+
 ## Deployment
 
 I don't know where/how we'll build it yet, but something like a circle CI free tier account would be a good option. Alternately, we might do it in GitHub actions. It's highly likely that we won't necessarily care about the deployment in this repo, and instead just build the container image and push it to ECR so that the corresponding terraform side of things can actually set up the service in fargate.
